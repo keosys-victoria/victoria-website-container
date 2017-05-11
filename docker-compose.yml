@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+
+  mysql:
+    image: mariadb
+    command: mysqld --innodb-buffer-pool-size=20M
+    volumes:
+      - "/var/lib/mysql:/var/lib/mysql:rw"
+    ports:
+      - "3306:3306"
