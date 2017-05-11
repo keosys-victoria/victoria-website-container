@@ -6,6 +6,8 @@ services:
     image: wordpress
     ports:
       - 8090:80
+    volumes:
+      - "/var/www/html-cont:/var/www/html:rw"
     environment:
       WORDPRESS_DB_PASSWORD: example
 
